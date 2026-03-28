@@ -1,0 +1,11 @@
+(defun controlador (path)
+  (let ((s (open path :direction :input)))
+    (let ((mapa (read s)))
+      (pinta mapa))
+    (close s)))
+
+(defun llegeix-exp (nom-fitxer)
+ (let* ((fp (open nom-fitxer))
+ (e (read fp nil nil)))
+ (close fp)
+ (pinta-mapa e)))
